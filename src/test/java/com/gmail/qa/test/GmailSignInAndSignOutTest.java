@@ -39,7 +39,7 @@ public class GmailSignInAndSignOutTest extends Base
 	public RetryRule repeatRule = new RetryRule();
 	
 	@Test
-	@Retry(0)
+	@Retry(1)
 	public void testGmailSignInAndSignOut() throws InterruptedException, IOException, EmailNotEnteredException, EmailNotFoundException, PasswordNotEnteredException, PasswordNotMatchedException, TimeoutException
 	{
 		enterPasswordPage=enterEmailPage.populateAndSubmitEnterEmailPage()

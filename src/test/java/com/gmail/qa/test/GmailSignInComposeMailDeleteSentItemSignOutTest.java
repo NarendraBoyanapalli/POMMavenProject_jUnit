@@ -39,7 +39,7 @@ public class GmailSignInComposeMailDeleteSentItemSignOutTest extends Base
 	public RetryRule repeatRule = new RetryRule();
 	
 	@Test
-	@Retry(0)
+	@Retry(1)
 	public void testGmailSignInComposeMailDeleteSentItemSignOut() throws InterruptedException, IOException, EmailNotEnteredException, EmailNotFoundException, PasswordNotEnteredException, PasswordNotMatchedException, TimeoutException
 	{
 		inboxPage= enterEmailPage.populateAndSubmitEnterEmailPage()
