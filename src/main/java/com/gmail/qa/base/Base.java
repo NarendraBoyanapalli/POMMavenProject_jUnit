@@ -17,17 +17,20 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.gmail.qa.pages.EnterEmailPage;
 import com.gmail.qa.utils.DataProvider;
+import com.gmail.qa.utils.Utils;
 
 public abstract class Base 
 {
 	public WebDriver wd;
 	public static Properties properties;
 	public static HashMap<String, String> map;
-	Logger logger= Logger.getLogger(this.getClass().getSimpleName());
+	Logger logger;
+	Utils utils;
 	
 	//Constructor to initialize and load config.properties.
 	public Base()
 	{
+		logger= Logger.getLogger(this.getClass().getSimpleName());
 		logger.info("Execution Started");
 		try
 		{
@@ -70,6 +73,9 @@ public abstract class Base
 		//wd.manage().timeouts().implicitlyWait(Utils.IMPLICIT_WAIT, TimeUnit.SECONDS);
 		
 		wd.get(properties.getProperty("url"));
+		utils= new Utils();
+		utils.getURL();
+		
 		map= DataProvider.getTestData(getDataPath());
 	
 		return new EnterEmailPage(wd);
