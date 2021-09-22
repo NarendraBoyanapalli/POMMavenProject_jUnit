@@ -1,5 +1,6 @@
 package com.gmail.qa.base;
 //Adding comment to GIT push.
+//Adding comment to GIT merge.
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
